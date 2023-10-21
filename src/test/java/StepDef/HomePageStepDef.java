@@ -48,5 +48,6 @@ public class HomePageStepDef {
     @Then("I Should Log Out Successfully")
     public void iShouldLogOutSuccessfully() {
         Assert.assertEquals(driver.getDriver().getTitle(), "TN Bank - Login");
+        driver.closeDriver();
     }
 }
