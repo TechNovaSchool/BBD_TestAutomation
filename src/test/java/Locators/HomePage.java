@@ -17,4 +17,7 @@ public class HomePage {
 
     @FindBy(xpath = "//button[text()='Add Money to Checking']")
     public WebElement addMoneyToChecking;
+
+    @FindBy(id = "logOut")
+    public WebElement LogOutButton;
 }

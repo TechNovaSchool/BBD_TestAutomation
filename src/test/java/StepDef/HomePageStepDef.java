@@ -4,6 +4,7 @@ import Locators.HomePage;
 import Locators.LoginPage;
 import Utils.Config;
 import Utils.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,5 +33,20 @@ public class HomePageStepDef {
 
         Assert.assertTrue(homePage.addMoneyToChecking.isDisplayed());
         driver.closeDriver();
+    }
+
+    @Then("I Should See Log Out Button is Displayed")
+    public void iShouldSeeLogOutButtonIsDisplayed() {
+        Assert.assertTrue(homePage.LogOutButton.isDisplayed());
+    }
+
+    @And("I Click Log Out Button")
+    public void iClickLogOutButton() {
+        homePage.LogOutButton.click();
+    }
+
+    @Then("I Should Log Out Successfully")
+    public void iShouldLogOutSuccessfully() {
+        Assert.assertEquals(driver.getDriver().getTitle(), "TN Bank - Login");
     }
 }
